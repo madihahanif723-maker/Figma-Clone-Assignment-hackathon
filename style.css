@@ -1,0 +1,848 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    /* Adjust closely to screenshot blue */
+    --text-dark: #111;
+    --text-muted: #666;
+    --highlight-color: #ffd700;
+    /* Yellow highlight */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8f9fa;
+    /* Light gray background from top of screenshot, or white? Screenshot top looks gray, main body white. */
+    background: linear-gradient(to bottom, #cccccc 0%, #f8f8f8 100px, #ffffff 100%);
+    /* Rough approximation of header shadow/bg */
+    background: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: transparent;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-brand svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.btn-primary {
+    background-color: #0066ff;
+    border-color: #0066ff;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+}
+
+.btn-primary:hover {
+    background-color: #0052cc;
+    border-color: #0052cc;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    overflow: hidden;
+    /* For image positioning */
+}
+
+.hero-headline {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    background-color: #ffeb3b;
+    padding: 0 0.2em;
+    display: inline-block;
+}
+
+.hero-subtext {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin-bottom: 1rem;
+}
+
+.hero-form .form-control {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.hero-form .btn {
+    border-radius: 4px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    white-space: nowrap;
+}
+
+.trust-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+/* Right Side Visuals */
+.hero-visual {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Simulating the card stack with CSS if possible, or placeholder */
+.mockup-card {
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    /* transition: transform 0.3s ease; */
+}
+
+/* Placeholder for the main image area */
+.image-placeholder {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+/* Logos Section */
+.logos-section {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.logos-section h6 {
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    opacity: 0.5;
+    flex-wrap: wrap;
+}
+
+.logo-placeholder {
+    height: 30px;
+    filter: grayscale(100%);
+}
+
+@media (max-width: 991px) {
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-visual {
+        display: none;
+        /* Hide complex visual on mobile for first pass, or stack it */
+        min-height: 300px;
+        margin-top: 3rem;
+    }
+}
+
+/* Section 2: Features */
+.features-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #fff;
+}
+
+.browser-mockup {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.browser-header {
+    background: #1a1a1a;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+.browser-content {
+    background: #fff;
+    padding: 0;
+    /* Image will fill it */
+}
+
+.feature-headline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #999;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.feature-item:hover {
+    color: var(--primary-color);
+}
+
+.feature-item.active {
+    background-color: #f0f7ff;
+    /* Light blue bg */
+    color: var(--primary-color);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    align-items: center;
+    gap: 15px;
+}
+
+.integration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.integration-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.integration-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.integration-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Brand Colors for Icons */
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fa-facebook {
+    color: #1877f2;
+}
+
+.fa-tiktok {
+    color: #000000;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-linkedin {
+    color: #0a66c2;
+}
+
+/* Section 4: Benefits & Testimonial */
+.benefits-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.benefits-headline {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+}
+
+.benefit-card {
+    background: #f1f3f5;
+    /* Light gray from screenshot */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    height: 100%;
+}
+
+.benefit-title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    /* font-size: 1.1rem; */
+    margin-bottom: 0.5rem;
+}
+
+.benefit-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Testimonial Area */
+.testimonial-area {
+    margin-top: 6rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-logo {
+    font-family: serif;
+    /* Approx for 'Clovin' font */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-quote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.user-role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Section 4: Templates */
+.templates-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #111827;
+    /* Dark background */
+    color: #fff;
+    text-align: left;
+    /* Default left align for cards, center for header overridden */
+}
+
+.templates-headline {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.templates-subtext {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    /* Gray-400 */
+    max-width: 700px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.template-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    color: #111;
+    transition: transform 0.2s;
+    text-align: left;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+}
+
+.template-image-area {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.template-content {
+    padding: 24px;
+}
+
+.template-title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.template-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Slider Card */
+.story-frame {
+    width: 70%;
+    aspect-ratio: 4/5;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: -15%;
+    /* Slight offset to push it down if needed, but flex layout handles it better. I'll remove negative margin for cleaner layout */
+}
+
+/* Gallery Card */
+.gallery-item {
+    width: 32%;
+    aspect-ratio: 9/15;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.gallery-bottom {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.gallery-date {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+/* Integrations Section */
+.integrations-section {
+    padding: 6rem 0;
+    background-color: #f1f7ff;
+    /* Light blue tint */
+}
+
+.integrations-heading {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #111;
+    line-height: 1.2;
+}
+
+.platform-card {
+    transition: transform 0.2s;
+    border: 1px solid transparent;
+}
+
+.platform-card:hover {
+    transform: translateX(5px);
+    border-color: #e2e8f0;
+}
+
+/* Connector Lines Logic for the tree diagram */
+/* This is a visual approximation of the tree structure */
+.connector-lines {
+    display: flex;
+    align-items: center;
+}
+
+/* We use the border-right on the container to act as the vertical trunk,
+   and pseudo elements on the cards or a separate SVG would be ideal, 
+   but for CSS-only simple clone: */
+.platform-card {
+    position: relative;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    /* Distance to the vertical connection line */
+    top: 50%;
+    width: 42px;
+    height: 2px;
+    border-top: 2px dashed #cbd5e1;
+    opacity: 0.5;
+}
+
+/* Hide the main horizontal line on mobile if needed, or adjust spacing */
+@media (max-width: 991px) {
+    .network-diagram {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .connector-lines {
+        display: none;
+    }
+
+    .platform-card::before {
+        display: none;
+    }
+}
+
+.popover-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 200px;
+}
+
+.badge-avatar-gradient {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Highlights Card */
+.highlight-ring {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 3px;
+    margin: 0 auto 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.highlight-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.popover-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    /* ... pill shape, shadow ... */
+}
+
+.bgone {
+    background-color: #EEF1F7;
+}
+
+/* Customization Section */
+.feature-pill {
+    background: #f3f4f6;
+    color: #111;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+}
+
+.dashboard-mockup {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.dash-sidebar {
+    background: #f9fafb;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-menu-item {
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dash-menu-item:hover,
+.dash-menu-item.active {
+    background: #eff6ff;
+    color: #2563eb;
+    /* Primary Blue */
+}
+
+@media (max-width: 991px) {
+    .dash-sidebar {
+        display: none;
+        /* Hide sidebar on smaller screens for simplicity in this clone */
+    }
+}
+
+/* Installation Section */
+.dashboard-dimmed {
+    opacity: 0.4;
+    filter: invert(0.1) brightness(0.9);
+    user-select: none;
+    background: #e5e5e5;
+    /* Fallback */
+    height: 600px;
+    /* Ensure height for modal placement background */
+}
+
+.install-modal {
+    border: 1px solid #e5e7eb;
+}
+
+.cms-tab {
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.cms-tab:hover {
+    background: #fff;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 0;
+    background-color: #f1f7ff;
+    /* Very light blue/gray matching previous sections */
+}
+
+.cta-heading {
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #111;
+    line-height: 1.2;
+}
+
+.cta-input {
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+}
+
+.cta-card {
+    transition: transform 0.3s;
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Features Grid Section */
+.feature-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+/* Testimonial Section */
+.testimonial-card {
+    background-color: #0b1623;
+    /* Dark Navy/Black */
+}
+
+.play-button {
+    transition: transform 0.2s;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+/* Reviews Section */
+.review-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Platform Features Section */
+.highlight-yellow {
+    background-color: #ffee00;
+    padding: 0 5px;
+}
+
+.feature-badge {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Pricing & FAQ Section */
+.pricing-faq-section {
+    background-color: #f0f2f5;
+    /* Light gray background */
+}
+
+.pricing-card {
+    transition: transform 0.2s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Fix for badge positioning on PRO card */
+.pricing-card.pro {
+    margin-top: 0;
+}

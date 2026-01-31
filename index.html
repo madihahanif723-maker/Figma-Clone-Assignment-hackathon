@@ -1,12 +1,1547 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmbedSocial - Instagram Stories Widget</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <h1>Welcome to My Figma Clone Assignment</h1>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container bg-gray-100">
+      <a class="navbar-brand" href="#">
+        <!-- Simple Logo Icon -->
+        <img src="images/Group 335.png" alt="">
+        embedsocial
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Platform <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Templates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="text-decoration-none text-dark fw-medium">Login</a>
+          <a href="#" class="btn btn-primary text-white">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Content -->
+        <div class="col-lg-6">
+          <h1 class="hero-headline">
+            Display Instagram Stories on any website, <span class="highlight">in seconds.</span>
+          </h1>
+          <p class="hero-subtext">
+            Display Instagram Stories Widget on your website, that auto-syncs, and updates each time you add a photo in
+            your active story.
+          </p>
+
+          <form class="hero-form">
+            <input type="email" class="form-control" placeholder="Enter your email..." aria-label="Enter your email">
+            <button class="btn btn-primary" type="submit">Start Free Trial &rarr;</button>
+          </form>
+
+          <p class="trust-text">
+            Free 7-day trial &bull; Easy setup &bull; Cancel any time
+          </p>
+
+        </div>
+
+        <!-- Right Visual -->
+        <div class="col-lg-6 position-relative">
+          <div class="hero-visual">
+            <!-- Since we don't have the exact image assets, I will use a placeholder image that represents the 'collage' effect or I can leave it as a large placeholder area as per standard practice when assets are missing. -->
+            <!-- For a better result I will try to use a placeholder service with a relevant size -->
+            <img src="images/Group 1537@2x.png" alt="Hero Collage Placeholder" class="img-fluid rounded-4 shadow-lg">
+
+            <!-- Floating Icon Simulation -->
+            <div
+              style="position: absolute; bottom: 20%; left: -30px; background: white; padding: 10px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+              <!-- <i class="fa-brands fa-instagram fa-3x"
+                style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); -webkit-background-clip: text; color: transparent;"></i> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Widgets Feature -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row mb-5 mt-5 text-center justify-content-center align-items-center">
+        <div class="col-lg-12 ">
+          <!-- Logos Section -->
+          <div class="logos-section">
+            <h6>JOIN 50,000+ WEBSITES THAT USE EMBEDSOCIAL TO SELL MORE</h6>
+            <div class="logo-row">
+              <!-- Using Text/Icons as placeholders for logos -->
+              <span class="fw-bold fs-4 text-muted">CNN</span>
+              <span class="fw-bold fs-5 text-muted"><i class="fa-regular fa-square"></i> NATIONAL GEOGRAPHIC</span>
+              <span class="fw-bold fs-4 text-muted">florence</span>
+              <span class="fw-bold fs-4 text-muted">ancestry</span>
+              <span class="fw-bold fs-4 text-muted"><i class="fa-solid fa-check"></i> NIKE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <!-- Left Column: Browser Mockup -->
+        <div class="col-lg-7 mb-5 mb-lg-0">
+          <div class="browser-mockup">
+            <div class="browser-header">
+              <div class="browser-dot"></div>
+              <div class="browser-dot"></div>
+              <div class="browser-dot"></div>
+            </div>
+            <div class="browser-content">
+              <!-- Using a placeholder for the inner 'Foodie' website content for now, or a very generic structure -->
+              <!-- In a real scenario, this would be the 'Group 1537' image if it was the full browser view, but user uploaded it for hero mainly? Let's check. 
+                                Actually, looking at the screenshot, the Left side IS the browser mockup with content. 
+                                I'll use a placeholder structure to mimick the 'Foodie' site provided in the screenshot 
+                                OR simpler: I will use an image tag if the user provides one, but for now, I'll build a mini-layout -->
+              <div style="padding: 20px; text-align: center;">
+                <h4 class="fw-bold mt-4">Foodie</h4>
+                <h2 class="display-6 fw-bold my-4">Try the best recipes</h2>
+                <button class="btn btn-dark btn-sm rounded-pill px-4 mb-5">See Recipes</button>
+
+                <!-- Fake Widget Grid -->
+                <div class="row g-2 px-4 pb-4 mx-2">
+                  <div class="col-2"><img src="images/Frame 951.png" class="img-fluid rounded-3"></div>
+                  <div class="col-2"><img src="images/Frame 948.png" class="img-fluid rounded-3"></div>
+                  <div class="col-2"><img src="images/Frame 949.png" class="img-fluid rounded-3"></div>
+                  <div class="col-2"><img src="images/Frame 950.png" class="img-fluid rounded-3"></div>
+                  <div class="col-2"><img src="images/Frame 952.png" class="img-fluid rounded-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Features List -->
+        <div class="col-lg-5 ps-lg-5">
+          <h2 class="feature-headline">Widgets for<br>every website.</h2>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-ellipsis"></i></div>
+              <span>Highlights</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-regular fa-window-restore"></i></div>
+              <span>Popover</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
+              <span>Inline slideshows</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-list-ul"></i></div>
+              <span>Story list gallery</span>
+            </div>
+
+            <div class="feature-item active">
+              <div class="feature-icon"><i class="fa-solid fa-table-columns"></i></div>
+              <span>Carousel gallery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  </section>
+
+  <!-- Section 3: Integrations -->
+  <section class="integrations-section">
+    <div class="container">
+      <h2 class="integration-headline">
+        Let your story live <span class="highlight">more than 24h.</span>
+      </h2>
+      <p class="integration-subtext">
+        You've worked hard to create a beautiful Instagram story but it disappears in 24 hours?
+        No worries, use our story saver for Instagram to bring them to life on your website.
+      </p>
+
+      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+        <!-- Instagram -->
+        <div class="col">
+          <div class="integration-card">
+            <div class="integration-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h5 class="integration-title">Auto-Sync</h5>
+            <p class="integration-subtitle">Instagram Stories</p>
+          </div>
+        </div>
+
+        <!-- Facebook -->
+        <div class="col">
+          <div class="integration-card">
+            <div class="integration-icon">
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+            <h5 class="integration-title">Upload</h5>
+            <p class="integration-subtitle">Facebook Stories</p>
+          </div>
+        </div>
+
+        <!-- TikTok -->
+        <div class="col">
+          <div class="integration-card">
+            <div class="integration-icon">
+              <i class="fa-brands fa-tiktok"></i>
+            </div>
+            <h5 class="integration-title">Sync</h5>
+            <p class="integration-subtitle">TikTok Stories</p>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="col">
+          <div class="integration-card">
+            <div class="integration-icon">
+              <i class="fa-brands fa-twitter"></i>
+            </div>
+            <h5 class="integration-title">Upload</h5>
+            <p class="integration-subtitle">Twitter Fleets</p>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="col">
+          <div class="integration-card">
+            <div class="integration-icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <h5 class="integration-title">Upload</h5>
+            <p class="integration-subtitle">LinkedIn Stories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="benefits-headline">Double your conversions.<br>Double your growth.</h2>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <h3 class="benefit-title">Brands</h3>
+
+            <div class="d-flex align-items-center gap-2 mt-5 mb-2">
+              <i class="fa-solid fa-chart-line fs-4"></i>
+              <h5 class="fw-bold m-0">Increases conversions</h5>
+            </div>
+
+            <p class="benefit-desc">
+              Enhance the visual showcase of your products with unique content making visitors convert to buyers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <h3 class="benefit-title">Marketers</h3>
+
+            <div class="d-flex align-items-center gap-2 mt-5 mb-2">
+              <i class="fa-solid fa-clock fs-4"></i>
+              <h5 class="fw-bold m-0">Save time</h5>
+            </div>
+
+            <p class="benefit-desc">
+              No more re-purposing, re-cropping or re-uploading the same content from your Instagram stories to your
+              website.
+            </p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <h3 class="benefit-title">Web designers</h3>
+
+            <div class="d-flex align-items-center gap-2 mt-5 mb-2">
+              <i class="fa-brands fa-instagram fs-4"></i>
+              <h5 class="fw-bold m-0">Fresh content</h5>
+            </div>
+
+            <p class="benefit-desc">
+              Every story you post on Instagram, it is automatically saved in your account. Auto updates you unique
+              content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+
+
+      <!-- Testimonial -->
+      <div class="testimonial-area">
+        <div class="testimonial-logo">Clovin</div>
+        <p class="testimonial-quote">
+          "EmbedSocial has been a game-changer for our business. We've seen a significant increase in engagement
+          and sales since we started using their platform."
+        </p>
+        <div class="testimonial-user">
+          <img src="https://i.pravatar.cc/150?img=11" alt="User" class="user-avatar">
+          <div class="user-info">
+            <h5 class="user-name">John Doe</h5>
+            <p class="user-role">CEO, Example Company</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Templates -->
+  <section class="templates-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="templates-headline">Get started with one<br>of our templates</h2>
+        <p class="templates-subtext mx-auto">
+          Start with one of our pre-designed templates. Create, personalize and embed the perfect widget for any page or
+          campaign in just minutes.
+        </p>
+        <button class="btn btn-primary mt-4">See templates demos &rarr;</button>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1: Popover -->
+        <div class="col-lg-3 col-md-6">
+          <div class="template-card">
+            <div class="template-image-area" style="background-color: #f3e8ff;">
+              <!-- Background Image with Gradient Overlay -->
+              <div style="...">
+                <img src="images/Group 1411.png" ...>
+              </div>
+
+              <!-- Floating Badge -->
+              <div class="popover-badge">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="badge-avatar-gradient p-1 rounded-circle">
+                    <img src="..." ...>
+                  </div>
+                  <div>
+                    <div class="fw-bold">escommerce</div>
+                    <div class="text-muted">1h ago | by EmbedSocial</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-content">
+              <h4 class="template-title">Popover</h4>
+              <p class="template-desc">
+                Showcases on every page that gives the feel of a living & breathing website.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Highlights -->
+        <div class="col-lg-3 col-md-6">
+          <div class="template-card d-flex flex-column justify-content-between">
+            <div class="template-content pb-0">
+              <h4 class="template-title" style="font-size: 2rem; margin-bottom: 1rem;">Highlights</h4>
+              <p class="template-desc">
+                Mimics the same functionality of the Instagram Highlights on your website.
+              </p>
+            </div>
+
+            <div class="template-image-area mt-4"
+              style="background-color: #eff6ff; align-items: flex-end; padding-bottom: 2rem;">
+              <div class="d-flex justify-content-center gap-2">
+                <!-- Tokyo -->
+                <div class="text-center">
+                  <div class="highlight-ring">
+                    <div class="highlight-img bg-secondary"></div>
+                    <!-- Using div placeholder if img fails, but let's try a real img source or icon -->
+                    <!-- Actually I'll use placeholders from pravatar or similar just to fill space or icons -->
+                    <img
+                      src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=100&q=80"
+                      class="highlight-img" alt="Tokyo">
+                  </div>
+                  <div class="highlight-label"><i class="fa-solid fa-tower-broadcast text-danger"></i> Tokyo</div>
+                </div>
+
+                <!-- India -->
+                <div class="text-center">
+                  <div class="highlight-ring">
+                    <img
+                      src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=100&q=80"
+                      class="highlight-img" alt="India">
+                  </div>
+                  <div class="highlight-label">India</div>
+                </div>
+
+                <!-- London -->
+                <div class="text-center">
+                  <div class="highlight-ring">
+                    <img
+                      src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=100&q=80"
+                      class="highlight-img" alt="London">
+                  </div>
+                  <div class="highlight-label">London</div>
+                </div>
+
+                <!-- NY -->
+                <div class="text-center">
+                  <div class="highlight-ring">
+                    <img src="images/Group 878.png" class="highlight-img" alt="NY">
+                  </div>
+                  <div class="highlight-label"><i class="fa-solid fa-crown text-success"></i> NY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 3: Slider -->
+        <div class="col-lg-3 col-md-6">
+          <div class="template-card">
+            <div class="template-image-area d-flex flex-column justify-content-start pt-4"
+              style="background-color: #f3f4f6;">
+
+              <!-- Slider Mock Header -->
+              <div class="d-flex justify-content-between align-items-center w-100 px-4 mb-3">
+                <div class="fw-bold small text-dark">Our Latest Stories</div>
+                <button class="btn btn-dark btn-sm py-1 px-2" style="font-size: 0.65rem; border-radius: 4px;"><i
+                    class="fa-brands fa-instagram"></i> Follow Us</button>
+              </div>
+
+              <!-- Story Frame -->
+              <div class="story-frame">
+                <img src="images/Frame 943.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Food">
+                <div class="position-absolute top-0 start-0 w-100 p-3 d-flex justify-content-between text-white small">
+                  <div class="d-flex align-items-center gap-1">
+                    <div class="bg-black rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 20px; height: 20px;"><i class="fa-solid fa-utensils" style="font-size: 10px;"></i>
+                    </div>
+                    <span class="fw-bold" style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Food</span>
+                  </div>
+                  <span style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">1d ago</span>
+                </div>
+                <!-- Progress Bar Simulation -->
+                <div class="position-absolute top-0 start-0 w-100 px-2 pt-1">
+                  <div class="d-flex gap-1">
+                    <div class="bg-white rounded-pill flex-grow-1" style="height: 2px;"></div>
+                    <div class="bg-white opacity-50 rounded-pill flex-grow-1" style="height: 2px;"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="template-content">
+              <h4 class="template-title">Slider</h4>
+              <p class="template-desc">
+                Display your stories in a full slideshow layout that catches your visitors' attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 4: Gallery -->
+        <div class="col-lg-3 col-md-6">
+          <div class="template-card">
+            <div class="template-image-area d-flex align-items-center justify-content-center"
+              style="background-color: #f3f4f6; padding: 20px;">
+
+              <div class="d-flex gap-2 justify-content-center w-100">
+                <!-- Item 1: Kiwi -->
+                <div class="gallery-item">
+                  <img src="images/Frame 951 (1).png" class="w-100 h-100 object-fit-cover" alt="Kiwi">
+                  <div class="gallery-badge"><i class="fa-solid fa-utensils"></i> New</div>
+                  <div class="gallery-bottom">
+                    <div class="gallery-date">18<br><span style="font-size: 8px;">Oct</span></div>
+                    <i class="fa-solid fa-film text-white" style="font-size: 10px;"></i>
+                  </div>
+                </div>
+
+                <!-- Item 2: Pumpkin -->
+                <div class="gallery-item">
+                  <img src="images/Frame 950.png" class="w-100 h-100 object-fit-cover" alt="Pumpkin">
+                  <div class="gallery-badge"><i class="fa-solid fa-leaf"></i> Autumn</div>
+                  <div class="gallery-bottom">
+                    <div class="gallery-date">22<br><span style="font-size: 8px;">Oct</span></div>
+                    <i class="fa-solid fa-film text-white" style="font-size: 10px;"></i>
+                  </div>
+                </div>
+
+                <!-- Item 3: Avocado -->
+                <div class="gallery-item">
+                  <img src="images/Frame 949.png" class="w-100 h-100 object-fit-cover" alt="Avocado">
+                  <div class="gallery-badge"><i class="fa-solid fa-bowl-food"></i> Food</div>
+                  <div class="gallery-bottom">
+                    <div class="gallery-date">19<br><span style="font-size: 8px;">Oct</span></div>
+                    <i class="fa-solid fa-film text-white" style="font-size: 10px;"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="template-content">
+              <h4 class="template-title">Gallery</h4>
+              <p class="template-desc">
+                One widget with multiple stories and embed them as a full story gallery on your website.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Pagination Dots -->
+        <div class="d-flex justify-content-center gap-2 mt-5">
+          <div class="bg-white rounded-circle" style="width: 8px; height: 8px; opacity: 1;"></div>
+          <div class="bg-white rounded-circle" style="width: 8px; height: 8px; opacity: 0.5;"></div>
+          <div class="bg-white rounded-circle" style="width: 8px; height: 8px; opacity: 0.5;"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Integrations -->
+  <section class="integrations-section">
+    <div class="container pt-5 pb-5 my-5">
+      <div class="row align-items-center bgone">
+        <!-- Text Content -->
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="d-flex align-items-center gap-2 mb-3 text-primary fw-bold">
+            <i class="fa-solid fa-box-open"></i> Integrations
+          </div>
+          <h2 class="integrations-heading mb-4">Works with 99.9% of web platforms</h2>
+          <p class="text-muted mb-4 fs-5">
+            We integrate with tons of other apps, ecommerce platforms or web builders. Native apps are available, too.
+          </p>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-solid fa-check text-dark"></i> <span class="text-muted">Works with any website</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <i class="fa-solid fa-check text-dark"></i> <span class="text-muted">No coding required to embed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Network Diagram -->
+        <div class="col-lg-6 offset-lg-1">
+          <div class="network-diagram d-flex align-items-center">
+            <!-- Hub -->
+            <div class="hub-container position-relative">
+              <div
+                class="hub-circle bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center p-3"
+                style="width: 100px; height: 100px; z-index: 2; position: relative;">
+                <div class="bg-primary rounded d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px;">
+                  <i class="fa-solid fa-code text-white fs-4"></i>
+                </div>
+              </div>
+              <!-- Glow effect behind hub -->
+              <div class="position-absolute top-50 start-50 translate-middle bg-primary opacity-10 rounded-circle"
+                style="width: 200px; height: 200px; z-index: 1;"></div>
+            </div>
+
+            <!-- Connector Lines (Simplified Visual) -->
+            <div class="connector-lines flex-grow-1"
+              style="height: 300px; border-right: 2px dashed #cbd5e1; position: relative; margin: 0 40px; opacity: 0.5;">
+              <!-- Horizontal line from hub -->
+              <div class="position-absolute top-50 start-0 translate-middle-y w-100"
+                style="height: 2px; border-top: 2px dashed #cbd5e1;"></div>
+            </div>
+
+            <!-- Platform List -->
+            <div class="platform-list d-flex flex-column gap-3 w-100" style="max-width: 200px;">
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-wordpress text-primary fs-4"></i> <span
+                  class="fw-bold small text-muted">WordPress</span>
+              </div>
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-weebly text-info fs-4"></i> <span class="fw-bold small text-muted">Weebly</span>
+              </div>
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-shopify text-success fs-4"></i> <span
+                  class="fw-bold small text-muted">Shopify</span>
+              </div>
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-wix text-dark fs-4"></i> <span class="fw-bold small text-muted">Wix</span>
+              </div>
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-squarespace text-dark fs-4"></i> <span
+                  class="fw-bold small text-muted">Squarespace</span>
+              </div>
+              <div class="platform-card bg-white p-2 rounded shadow-sm d-flex align-items-center gap-2">
+                <i class="fa-brands fa-webflow text-primary fs-4"></i> <span
+                  class="fw-bold small text-muted">Webflow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Customization -->
+  <section class="customization-section py-5">
+    <div class="container text-center mb-5">
+      <div class="d-inline-flex align-items-center gap-2 mb-3 bg-light text-primary px-3 py-1 rounded-pill fw-bold"
+        style="font-size: 0.9rem;">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Customization
+      </div>
+      <h1 class="display-5 fw-bold mb-3">Be on brand. Customize in minutes</h1>
+      <p class="text-muted fs-5 mb-5 mx-auto" style="max-width: 700px;">
+        EmbedStories gives you flexibility in managing the display and looks of the Instagram Stories on your website.
+      </p>
+
+      <!-- Feature Pills -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <div class="feature-pill"><i class="fa-regular fa-calendar"></i> Stories from specific date</div>
+        <div class="feature-pill"><i class="fa-solid fa-paintbrush"></i> Customize color</div>
+        <div class="feature-pill"><i class="fa-brands fa-instagram"></i> Follow button</div>
+        <div class="feature-pill"><i class="fa-solid fa-table-cells-large"></i> Multiple layouts</div>
+        <div class="feature-pill"><i class="fa-solid fa-sliders"></i> Advance moderation</div>
+        <div class="feature-pill"><i class="fa-solid fa-code"></i> Custom CSS</div>
+      </div>
+
+      <!-- Dashboard Mockup -->
+      <div class="dashboard-mockup text-start shadow-lg mx-auto" style="max-width: 1100px;">
+        <div class="d-flex flex-column flex-lg-row h-100">
+          <!-- Sidebar -->
+          <div class="dash-sidebar p-3 border-end">
+            <div class="dash-brand mb-4 d-flex align-items-center gap-2 text-primary fw-bold">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 32px; height: 32px;"><i class="fa-solid fa-bolt"></i></div> Stories <small
+                class="text-muted fw-normal ms-1" style="font-size: 0.7em;">by EmbedSocial</small>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <div class="dash-menu-item"><i class="fa-solid fa-chart-line"></i> Dashboard</div>
+              <div class="dash-menu-item active"><i class="fa-solid fa-layer-group"></i> All Stories</div>
+              <div class="dash-menu-item"><i class="fa-solid fa-table-cells"></i> Widgets</div>
+              <div class="dash-menu-item"><i class="fa-regular fa-images"></i> Galleries</div>
+              <div class="dash-menu-item"><i class="fa-solid fa-highlighter"></i> Highlights</div>
+              <div class="dash-menu-item"><i class="fa-solid fa-book"></i> Bookend</div>
+              <div class="dash-menu-item"><i class="fa-solid fa-rectangle-ad"></i> Ads</div>
+              <div class="dash-menu-item"><i class="fa-solid fa-file-invoice"></i> Reports</div>
+            </div>
+            <div class="mt-auto pt-4 border-top">
+              <div class="d-flex align-items-center gap-2">
+                <img src="images/girl dp.jpg" class="rounded-circle" width="32" height="32" alt="Avatar">
+                <div style="line-height: 1.2;">
+                  <div class="fw-bold small">Jenny Black</div>
+                  <div class="text-muted" style="font-size: 0.7rem;">My profile</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="dash-main p-4 flex-grow-1 bg-white">
+            <h3 class="fw-bold mb-4">Edit Feed: Recipe Book</h3>
+            <div class="d-flex gap-4 border-bottom mb-4 text-muted small">
+              <div class="pb-2 border-primary border-bottom border-2 text-primary fw-bold"><i
+                  class="fa-regular fa-eye"></i> Preview</div>
+              <div class="pb-2"><i class="fa-solid fa-bolt"></i> AMP Story</div>
+              <div class="pb-2"><i class="fa-solid fa-link"></i> Links</div>
+              <div class="pb-2"><i class="fa-solid fa-gear"></i> Moderate</div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold m-0">Recipe Book</h4>
+              <button class="btn btn-dark btn-sm"><i class="fa-brands fa-instagram"></i> Follow Us</button>
+            </div>
+
+            <!-- Mockup Grid -->
+            <div class="row g-3">
+              <!-- Card 1 -->
+              <div class="col-md-3 col-6">
+                <div class="position-relative rounded overflow-hidden">
+                  <img src="images/Frame 951 (1).png" class="w-100" style="aspect-ratio: 4/5; object-fit: cover;"
+                    alt="Kiwi">
+                  <div class="position-absolute top-0 start-0 m-2 badge bg-black"><i class="fa-solid fa-utensils"></i>
+                    New Recipes</div>
+                  <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                    <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">18<br><span
+                        style="font-size: 8px;">Oct</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="col-md-3 col-6">
+                <div class="position-relative rounded overflow-hidden">
+                  <img src="images/Frame 948 (1).png" class="w-100" style="aspect-ratio: 4/5; object-fit: cover;"
+                    alt="Pumpkin">
+                  <div class="position-absolute top-0 start-0 m-2 badge bg-warning text-dark"><i
+                      class="fa-solid fa-leaf"></i> Pumpkin Spice</div>
+                  <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                    <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">22<br><span
+                        style="font-size: 8px;">Oct</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="col-md-3 col-6">
+                <div class="position-relative rounded overflow-hidden">
+                  <img src="images/Frame 949.png" class="w-100" style="aspect-ratio: 4/5; object-fit: cover;"
+                    alt="Avocado">
+                  <div class="position-absolute top-0 start-0 m-2 badge bg-success"><i
+                      class="fa-solid fa-bowl-food"></i> Avocado Time</div>
+                  <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                    <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">19<br><span
+                        style="font-size: 8px;">Oct</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="col-md-3 col-6">
+                <div class="position-relative rounded overflow-hidden">
+                  <img src="images/Frame 950.png" class="w-100" style="aspect-ratio: 4/5; object-fit: cover;"
+                    alt="Sweet">
+                  <div class="position-absolute top-0 start-0 m-2 badge bg-warning"><i class="fa-solid fa-cookie"></i>
+                    Sweet</div>
+                  <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                    <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">01<br><span
+                        style="font-size: 8px;">Aug</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 7: Installation -->
+  <section class="installation-section py-5">
+    <div class="container text-center mb-5">
+      <!-- Header -->
+      <div class="d-inline-flex align-items-center gap-2 mb-3 bg-light text-primary px-3 py-1 rounded-pill fw-bold"
+        style="font-size: 0.9rem;">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Installation
+      </div>
+      <h2 class="display-5 fw-bold mb-3">Embed it and forget it</h2>
+      <div class="d-flex justify-content-center gap-4 text-muted fs-6 mb-5 flex-wrap">
+        <span><i class="fa-solid fa-check text-dark"></i> Simple installation. No developers needed</span>
+        <span><i class="fa-solid fa-check text-dark"></i> Embed on different CMS platforms</span>
+        <span><i class="fa-solid fa-check text-dark"></i> Auto sync new stories</span>
+      </div>
+
+      <!-- Visual Area -->
+      <div class="position-relative mx-auto" style="max-width: 1100px;">
+        <!-- Dimmed Background (Duplicate of Dashboard) -->
+        <div class="dashboard-mockup dashboard-dimmed text-start shadow-sm" style="overflow: hidden;">
+          <!-- Sidebar (Simplified duplication for bg) -->
+          <div class="d-flex flex-column flex-lg-row h-100">
+            <div class="dash-sidebar p-3 border-end">
+              <div class="dash-brand mb-4 d-flex align-items-center gap-2 text-primary fw-bold">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 32px; height: 32px;"><i class="fa-solid fa-bolt"></i></div> Stories
+              </div>
+              <div class="d-flex flex-column gap-1 opacity-50">
+                <div class="dash-menu-item"><i class="fa-solid fa-chart-line"></i> Dashboard</div>
+                <div class="dash-menu-item active"><i class="fa-solid fa-layer-group"></i> All Stories</div>
+                <div class="dash-menu-item"><i class="fa-solid fa-table-cells"></i> Widgets</div>
+                <div class="dash-menu-item"><i class="fa-regular fa-images"></i> Galleries</div>
+                <div class="dash-menu-item"><i class="fa-solid fa-highlighter"></i> Highlights</div>
+              </div>
+            </div>
+            <div class="dash-main p-4 flex-grow-1 bg-white">
+              <h3 class="fw-bold mb-4">Edit Feed: Recipe Book</h3>
+              <div class="d-flex gap-4 border-bottom mb-4 text-muted small">
+                <div class="pb-2 border-primary border-bottom border-2 text-primary fw-bold">Preview</div>
+                <div class="pb-2">AMP Story</div>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-3 col-6">
+                  <div class="rounded bg-light" style="height: 200px;"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="rounded bg-light" style="height: 200px;"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="rounded bg-light" style="height: 200px;"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="rounded bg-light" style="height: 200px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Overlay -->
+        <div
+          class="install-modal position-absolute top-50 start-50 translate-middle bg-white shadow-lg rounded p-4 text-start"
+          style="width: 90%; max-width: 650px; z-index: 10;">
+          <h4 class="fw-bold mb-4 text-center">Implementation instructions</h4>
+          <!-- Video Placeholder -->
+          <div
+            class="modal-video-placeholder bg-primary rounded mb-4 d-flex align-items-center justify-content-center text-white position-relative overflow-hidden"
+            style="height: 220px; background: #0b2558;">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+            <div class="text-center position-relative z-1">
+              <img src="images/girl dp.jpg" class="rounded-circle mb-2 border border-white mx-auto" width="60"
+                height="60" style="object-fit: cover;" alt="Video">
+              <div
+                class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 shadow"
+                style="width: 50px; height: 50px; font-size: 1.2rem;"><i class="fa-solid fa-play"></i></div>
+              <div class="fw-bold fs-5">Embed Google Reviews on any Website</div>
+              <div class="text-warning small"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+          </div>
+
+          <!-- CMS Tabs -->
+          <div class="d-flex justify-content-between mb-4 bg-light p-1 rounded">
+            <div
+              class="cms-tab active text-primary fw-bold bg-white shadow-sm px-3 py-2 rounded d-flex align-items-center justify-content-center gap-2 flex-grow-1 mx-1">
+              <i class="fa-solid fa-code"></i> HTML
+            </div>
+            <div
+              class="cms-tab text-muted px-3 py-2 d-flex align-items-center justify-content-center gap-2 flex-grow-1">
+              <i class="fa-brands fa-wordpress"></i> Wordpress
+            </div>
+            <div
+              class="cms-tab text-muted px-3 py-2 d-flex align-items-center justify-content-center gap-2 flex-grow-1">
+              <i class="fa-brands fa-shopify"></i> Shopify
+            </div>
+            <div
+              class="cms-tab text-muted px-3 py-2 d-flex align-items-center justify-content-center gap-2 flex-grow-1">
+              Other</div>
+          </div>
+
+          <p class="small text-muted mb-2">If you are not using any web builder, just add/paste the provided code in
+            your
+            website's &lt;body&gt; in the position where you want the reviews to appear</p>
+
+          <!-- Code Block -->
+          <div class="bg-light border rounded p-3 mb-3 text-muted"
+            style="font-family: monospace; font-size: 0.75rem; overflow-x: auto; white-space: nowrap;">
+            &lt;div class='embedsocial-stories'
+            data-ref="248fa1114347b4ee5feaada90416c974c010d4f4"&gt;&lt;/div&gt;&lt;script&gt;(function(d, s, id){var js;
+            if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src =
+            "https://embedsocial.com/embedscript/st.js";...&lt;/script&gt;
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary px-4 mb-3"><i class="fa-solid fa-code"></i> Copy Code</button>
+            <div class="small fw-bold text-primary">Need Help? <a href="#"
+                class="text-primary text-decoration-none">Chat
+                with us!</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <h2 class="cta-heading mb-4">Ready to dive in?<br>Create your widget today.</h2>
+          <p class="text-secondary mb-4 fs-6" style="max-width: 400px; line-height: 1.6;">
+            Display Instagram Stories Widget on your website, that auto-syncs, and updates each time you add a photo in
+            your active story.
+          </p>
+
+          <!-- Form -->
+          <div class="d-flex gap-2 mb-3 align-items-stretch cta-form">
+            <input type="email" class="form-control cta-input" placeholder="Enter your email...">
+            <button class="btn btn-primary text-nowrap px-4 fw-bold d-flex align-items-center gap-2">Start Free Trial <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div class="small text-muted fw-bold" style="font-size: 0.75rem;">
+            Free 7-day trial • Easy setup • Cancel any time
+          </div>
+        </div>
+
+        <!-- Visual Cards -->
+        <div class="col-lg-6 offset-lg-1">
+          <div class="d-flex justify-content-between gap-3 align-items-center position-relative">
+            <!-- Nav Arrow Left -->
+            <div
+              class="position-absolute start-0 top-50 translate-middle-y bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center opacity-50 shadow-sm z-3"
+              style="width: 30px; height: 30px; margin-left: -15px;"><i class="fa-solid fa-chevron-left small"></i>
+            </div>
+
+            <!-- Card 1 (Kiwi) -->
+            <div class="cta-card rounded overflow-hidden shadow-sm position-relative flex-grow-1"
+              style="aspect-ratio: 9/16;">
+              <img src="images/Frame 951 (1).png" class="w-100 h-100 object-fit-cover" alt="Kiwi">
+              <div class="position-absolute top-0 start-0 m-2 badge bg-black"><i class="fa-solid fa-utensils"></i> New
+                Recipes</div>
+              <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">18<br><span
+                    style="font-size: 8px;">Oct</span></div>
+              </div>
+              <div class="position-absolute bottom-0 end-0 m-2 text-white"><i class="fa-solid fa-film"></i></div>
+            </div>
+
+            <!-- Card 2 (Pumpkin) -->
+            <div class="cta-card rounded overflow-hidden shadow-sm position-relative flex-grow-1"
+              style="aspect-ratio: 9/16;">
+              <img src="images/Frame 948 (1).png" class="w-100 h-100 object-fit-cover" alt="Pumpkin">
+              <div class="position-absolute top-0 start-0 m-2 badge bg-warning text-dark"><i
+                  class="fa-solid fa-leaf"></i> Pumpkin Spice</div>
+              <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">22<br><span
+                    style="font-size: 8px;">Oct</span></div>
+              </div>
+              <div class="position-absolute bottom-0 end-0 m-2 text-white"><i class="fa-solid fa-film"></i></div>
+            </div>
+
+            <!-- Card 3 (Avocado) -->
+            <div class="cta-card rounded overflow-hidden shadow-sm position-relative flex-grow-1"
+              style="aspect-ratio: 9/16;">
+              <img src="images/Frame 949.png" class="w-100 h-100 object-fit-cover" alt="Avocado">
+              <div class="position-absolute top-0 start-0 m-2 badge bg-success"><i class="fa-solid fa-bowl-food"></i>
+                Avocado Time</div>
+              <div class="position-absolute bottom-0 start-0 m-2 text-white small fw-bold">
+                <div class="bg-dark rounded p-1 text-center" style="width: 30px; line-height: 1;">19<br><span
+                    style="font-size: 8px;">Oct</span></div>
+              </div>
+              <div class="position-absolute bottom-0 end-0 m-2 text-white"><i class="fa-solid fa-film"></i></div>
+            </div>
+
+            <!-- Nav Arrow Right -->
+            <div
+              class="position-absolute end-0 top-50 translate-middle-y bg-white text-dark rounded-circle d-flex align-items-center justify-content-center shadow-sm z-3"
+              style="width: 30px; height: 30px; margin-right: -15px;"><i class="fa-solid fa-chevron-right small"></i>
+            </div>
+          </div>
+          <div class="text-end mt-3 text-muted small">
+            Widget powered by <span class="text-primary"><i class="fa-solid fa-bolt"></i> EmbedSocial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Features Grid -->
+  <section class="features-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold display-6 mb-5">Other features at your service</h2>
+
+      <div class="row g-4">
+        <!-- Card 1: Auto sync -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Auto sync</h5>
+            <p class="text-muted small">Sync all Instagram stories in a single click and create an widget that you can
+              embed on any website.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Responsive -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Responsive</h5>
+            <p class="text-muted small">Mobile-friendly, fully responsive, fits on every display: tablet, mobile, or
+              desktop.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Follow button -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Follow button</h5>
+            <p class="text-muted small">Show a Follow button with a link to your Instagram account to help you drive
+              traffic and increase followers.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Unlimited widgets -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-table-cells-large"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Unlimited widgets</h5>
+            <p class="text-muted small">Create multiple widgets and embed feeds on various websites from multiple social
+              media platforms.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Localization -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Localization</h5>
+            <p class="text-muted small">Use the 10+ languages available in the platform to localize the widget for your
+              web visitors.</p>
+          </div>
+        </div>
+
+        <!-- Card 6: Filters (PRO) -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-filter"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Filters (PRO)</h5>
+            <p class="text-muted small">Use filters by date or keywords. Change the number of pages and post per page in
+              your feed...</p>
+          </div>
+        </div>
+
+        <!-- Card 7: Analytics -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100">
+            <div
+              class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Analytics</h5>
+            <p class="text-muted small">Know which Instagram story performs best and the total clicks of the entire
+              widget on your website.</p>
+          </div>
+        </div>
+
+        <!-- Card 8: Custom CSS -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card p-4 h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-3">Custom CSS</h5>
+            <p class="text-muted small mb-4 flex-grow-1">Variety of settings, filters, and a Custom CSS editor to style
+              your social media widget entirely.</p>
+            <div class="feature-icon bg-primary text-white rounded d-flex align-items-center justify-content-center"><i
+                class="fa-solid fa-code"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-muted mt-5 mb-0" style="font-size: 0.9rem;">
+        Amd <a href="#" class="text-dark text-decoration-underline fw-bold">12 more features</a> available in all
+        plans...
+      </p>
+    </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Testimonial -->
+  <section class="testimonial-section py-5">
+    <div class="container">
+      <div class="testimonial-card rounded-4 p-5 text-white shadow-lg">
+        <div class="row align-items-center">
+          <!-- Text Content -->
+          <div class="col-lg-6 mb-4 mb-lg-0 pe-lg-5">
+            <h2 class="fw-bold mb-4 display-6">It was love at first story</h2>
+            <p class="testimonial-quote fs-5 mb-4 opacity-75 section-paragraph text-white" style="line-height: 1.6;">
+              "Great plugin and amazing support. I trialed several plugins that try to accomplish the same thing. None
+              of them did it as beautifully and as simple as EmbedStories"
+            </p>
+            <div class="mb-4">
+              <div class="fw-bold">Bertha Jo, CEO at jacole</div>
+            </div>
+            <div class="fs-2" style="font-family: 'Times New Roman', serif; font-style: italic;">jacole</div>
+          </div>
+
+          <!-- Video Thumbnail -->
+          <div class="col-lg-6">
+            <div class="video-thumbnail rounded-4 overflow-hidden position-relative" style="aspect-ratio: 16/9;">
+              <img src="images/video girl.png" class="w-100 h-100 object-fit-cover" alt="Video Thumbnail">
+              <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="play-button bg-white rounded-circle d-flex align-items-center justify-content-center shadow"
+                  style="width: 80px; height: 80px; cursor: pointer;">
+                  <i class="fa-solid fa-play fs-2 text-dark ps-1"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 11: Reviews Grid -->
+  <section class="reviews-section py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-6 mb-2">Our customers love EmbedStories</h2>
+        <p class="text-muted">Rated 4.8 by our customers on Facebook and Google</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Review 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Terry Dias" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Terry Dias</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">I just signed up for a trial and within a couple of hours had a brand
+              new customer testimonials page built on our website as well as sliders...</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=12" alt="James Workman" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">James Workman</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Seriously impressed by Embed Social. Good job making the app so easy to
+              use.</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=13" alt="Ahmad Vaccaro" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Ahmad Vaccaro</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Embed Social and their services is just perfect! It has made my
+              business life so much easier! 5 stars!</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=5" alt="Allison Culhane" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Allison Culhane</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Awesome products, Superior human support.</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=60" alt="Davis Herwitz" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Davis Herwitz</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">I've been on the look out for lots of companies to do what they do, and
+              I've never found any company who are so quick to get in touch and...</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=9" alt="Jessie Grant" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Jessie Grant</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Very impressed. 5 stars!</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=59" alt="John Smith" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">John Smith</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Our experience with EmbedStories is very good, very solid, loads fast,
+              looks good.</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="review-card p-4 h-100 rounded-3 border bg-white">
+            <div class="mb-3">
+              <img src="https://i.pravatar.cc/150?img=8" alt="Ben Calahen" class="rounded-3 mb-2" width="50"
+                height="50">
+              <h6 class="fw-bold mb-0">Ben Calahen</h6>
+            </div>
+            <div class="mb-3 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-secondary small mb-4">Storytelling on another level. EmbedStories is great - it takes pride
+              of place on our homepage...</p>
+            <div class="d-flex align-items-center gap-2 mt-auto opacity-75 small">
+              <i class="fa-brands fa-google text-primary"></i> <span class="text-muted">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 text-muted small">
+        Widget powered by <span class="text-primary fw-bold"><i class="fa-solid fa-bolt"></i> EmbedSocial</span>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Section 12: Platform Features -->
+  <section class="platform-features-section py-5">
+    <div class="container overflow-hidden">
+      <div class="text-center mb-5 pb-4">
+        <h2 class="fw-bold display-5">More than just a widget.<br>A complete <span class="highlight-yellow">Stories
+            Platform.</span></h2>
+      </div>
+
+      <!-- Feature 1: Shoppable -->
+      <div class="row align-items-center mb-5 gx-lg-5">
+        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+          <div class="feature-img-container mx-auto" style="max-width: 400px;">
+            <img src="images/Group 1511.png" alt="Shoppable Story" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+        <div class="col-lg-6 ps-lg-5">
+          <span class="badge feature-badge text-primary bg-primary-subtle mb-3">Shoppable Story</span>
+          <h3 class="fw-bold mb-3">Make your Instagram<br>Stories, Shoppable</h3>
+          <ul class="list-unstyled feature-check-list text-secondary">
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Use the Call
+              to Action feature and add buy links to the Instagram stories</li>
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Allow your
+              web visitors to interact and directly buy the product showcased in the Instagram story.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 2: Story Ads -->
+      <div class="row align-items-center mb-5 gx-lg-5 flex-lg-row-reverse">
+        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+          <div class="feature-img-container mx-auto" style="max-width: 500px;">
+            <img src="images/Group 1559.png" alt="Story Ads Dashboard" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+        <div class="col-lg-6 pe-lg-5">
+          <span class="badge feature-badge text-primary bg-info-subtle mb-3">Story Ads</span>
+          <h3 class="fw-bold mb-3">Boost your Instagram<br>stories with few clicks</h3>
+          <ul class="list-unstyled feature-check-list text-secondary">
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Create
+              Instagram Story Ads in just a few clicks</li>
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Archive
+              Instagram Stories with EmbedStories and re-use them for Instagram Ads.</li>
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> This is an
+              option that is not available in the Facebook Ads Manager.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 3: Reports and Analytics -->
+      <div class="row align-items-center gx-lg-5">
+        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+          <div class="feature-img-container mx-auto" style="max-width: 400px;">
+            <img src="images/Group 1522.png" alt="Analytics" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+        <div class="col-lg-6 ps-lg-5">
+          <span class="badge feature-badge text-primary bg-light-subtle mb-3"
+            style="background-color: #f3e8ff !important; color: #9c27b0 !important;">Reports and Analytics</span>
+          <h3 class="fw-bold mb-3">Create. Analyze. Grow.</h3>
+          <ul class="list-unstyled feature-check-list text-secondary">
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Analyze
+              conversions, clicks, views</li>
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> Compare
+              metrics between products</li>
+            <li class="mb-3 d-flex align-items-start"><i class="fa-solid fa-check text-dark me-2 mt-1"></i> See the
+              direct effect.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Section 13: Pricing & FAQ -->
+  <section class="pricing-faq-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-5 mb-3">Try all EmbedStories features 7 days free.</h2>
+        <p class="text-muted mb-4">Reach more with your Instagram stories.</p>
+
+        <!-- Pricing Toggle -->
+        <div class="d-inline-flex bg-white rounded-pill p-1 border">
+          <button class="btn btn-dark rounded-pill px-4 fw-bold shadow-sm" style="font-size: 0.9rem;">Annually, save
+            20%</button>
+          <button class="btn btn-white rounded-pill px-4 text-muted fw-semibold"
+            style="font-size: 0.9rem;">Monthly</button>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="row g-4 mb-5 pt-4">
+        <!-- Free -->
+        <div class="col-lg-3 col-md-6">
+          <div class="pricing-card bg-white p-4 h-100 rounded-3 border d-flex flex-column">
+            <h5 class="fw-bold mb-3">FREE</h5>
+            <div class="mb-4">
+              <span class="display-4 fw-bold">$0</span><span class="text-muted">/month</span>
+            </div>
+            <button class="btn btn-outline-primary w-100 fw-bold mb-4">Start Using For Free</button>
+            <div class="small fw-bold mb-2 text-decoration-underline">1 Instagram Business Account</div>
+            <div class="small fw-bold mb-3">Auto Update</div>
+
+            <ul class="list-unstyled pricing-list text-muted small flex-grow-1">
+              <li><i class="fa-solid fa-check text-muted me-2"></i> Unlimited Story Widgets</li>
+              <li><i class="fa-solid fa-check text-muted me-2"></i> Unlimited Galleries</li>
+              <li><i class="fa-solid fa-check text-muted me-2"></i> Multiple Layouts & Options</li>
+              <li><i class="fa-solid fa-check text-muted me-2"></i> Convert to AMP Format</li>
+              <li><i class="fa-solid fa-check text-muted me-2"></i> API Access</li>
+              <li><i class="fa-solid fa-check text-muted me-2"></i> Team Sub-Accounts</li>
+              <li class="opacity-50"><i class="fa-solid fa-check text-muted me-2"></i> Advance Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="pricing-card pro bg-white p-4 h-100 rounded-3 border border-2 border-primary position-relative d-flex flex-column shadow-sm">
+            <div
+              class="badge bg-primary position-absolute top-0 start-50 translate-middle pricing-badge px-3 py-2 rounded-bottom-0 rounded-top-2 w-100 text-uppercase"
+              style="border-radius: 6px 6px 0 0; top: -30px !important;">Most businesses start with PRO</div>
+            <h5 class="fw-bold mb-3">PRO</h5>
+            <div class="mb-4">
+              <span class="display-4 fw-bold">$29</span><span class="text-muted">/month</span>
+            </div>
+            <button class="btn btn-primary w-100 fw-bold mb-4">Try Free For 7 Days</button>
+            <div class="small fw-bold mb-2 text-decoration-underline">1 Instagram Business Account</div>
+            <div class="small fw-bold mb-3">Auto Update</div>
+
+            <ul class="list-unstyled pricing-list small flex-grow-1">
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Story Widgets</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Galleries</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Multiple Layouts & Options</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Convert to AMP Format</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> API Access</li>
+              <li><i class="fa-solid fa-check text-muted me-2 opacity-50"></i> Team Sub-Accounts</li>
+              <li><i class="fa-solid fa-check text-muted me-2 opacity-50"></i> Advance Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PRO Plus -->
+        <div class="col-lg-3 col-md-6">
+          <div class="pricing-card bg-white p-4 h-100 rounded-3 border d-flex flex-column">
+            <h5 class="fw-bold mb-3">PRO Plus</h5>
+            <div class="mb-4">
+              <span class="display-4 fw-bold">$49</span><span class="text-muted">/month</span>
+            </div>
+            <button class="btn btn-outline-primary w-100 fw-bold mb-4">Try Free For 7 Days</button>
+            <div class="small fw-bold mb-2 text-decoration-underline">3 Instagram Business Account</div>
+            <div class="small fw-bold mb-3">Auto Update</div>
+
+            <ul class="list-unstyled pricing-list small flex-grow-1">
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Story Widgets</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Galleries</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Multiple Layouts & Options</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Convert to AMP Format</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> API Access</li>
+              <li><i class="fa-solid fa-check text-muted me-2 opacity-50"></i> Team Sub-Accounts</li>
+              <li><i class="fa-solid fa-check text-muted me-2 opacity-50"></i> Advance Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="col-lg-3 col-md-6">
+          <div class="pricing-card bg-white p-4 h-100 rounded-3 border d-flex flex-column">
+            <h5 class="fw-bold mb-3">PREMIUM</h5>
+            <div class="mb-4">
+              <span class="display-4 fw-bold">$99</span><span class="text-muted">/month</span>
+            </div>
+            <button class="btn btn-outline-primary w-100 fw-bold mb-4">Try Free For 7 Days</button>
+            <div class="small fw-bold mb-2 text-decoration-underline">10 Instagram Business Account</div>
+            <div class="small fw-bold mb-3">Auto Update</div>
+
+            <ul class="list-unstyled pricing-list small flex-grow-1">
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Story Widgets</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Unlimited Galleries</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Multiple Layouts & Options</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Convert to AMP Format</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> API Access</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Team Sub-Accounts</li>
+              <li><i class="fa-solid fa-check text-dark me-2"></i> Advance Analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="text-center mb-5 mt-5 pt-4">
+        <h2 class="fw-bold display-6">Frequently asked questions</h2>
+        <p class="text-muted">Have a specific question? Check out our Support Center</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion accordion-flush bg-transparent" id="faqAccordion">
+            <div class="accordion-item bg-transparent mb-3 border-bottom pb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Question 1
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu suscipit euismod semper leo.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-transparent mb-3 border-bottom pb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Question 2
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Answer to question 2.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-transparent mb-3 border-bottom pb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Question 3
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Answer to question 3.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-transparent mb-3 border-bottom pb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Question 4
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Answer to question 4.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
