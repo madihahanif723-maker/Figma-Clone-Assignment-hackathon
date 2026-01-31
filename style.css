@@ -846,3 +846,130 @@ body {
 .pricing-card.pro {
     margin-top: 0;
 }
+
+/* CTA Section - Ready to dive in? */
+.cta-section-final {
+    padding: 8rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.cta-header-final {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.cta-description-final {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.cta-form-final {
+    max-width: 500px;
+    margin: 0 auto 1rem;
+}
+
+.cta-input-group-final {
+    display: flex;
+    border: 2px solid #0066ff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cta-input-final {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    flex-grow: 1;
+    font-size: 1rem;
+    outline: none;
+}
+
+.cta-btn-final {
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.cta-btn-final:hover {
+    background-color: #0052cc;
+    color: #fff;
+}
+
+.cta-trust-final {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Dark Footer */
+.footer-dark {
+    background-color: #0b121e;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.footer-dark a {
+    color: #8c98a9;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+
+.footer-dark a:hover {
+    color: #fff;
+}
+
+.footer-heading {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.footer-logo-text {
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+.footer-desc {
+    color: #8c98a9;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 0.8rem;
+}
